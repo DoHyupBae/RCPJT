@@ -4,4 +4,34 @@
 ---
 # 개발 환경
 1. GUI : Pycharm(CE)으로 Pyside6 통해 개발
-2. Firmware : Pycharm(CE) & Rpi5 Vim
+2. Firmware : python으로 작성, Pycharm(CE) & Rpi5 Vim
+3. 분석 웹페이지 : Vue.js & gpt 3.5 api
+4. RC car : Rpi5 & motor expansion board, mpu6050, 초음파센서
+5. DB : MySQL
+
+---
+# 기능
+## GUI
+1. Pyside6 로 개발한 GUI
+2. 전후좌우 정지 버튼 +
+3. 키보드 조종 추가
+4. 실시간 센서 데이터 수신 및 표시
+5. 사고 발생시 즉시 표시
+
+## RC Car
+### 조종
+1. GUI로 조종 : 전후좌우 휠중앙 정지
+2. 키보드 단축키 설정
+
+### 사고 데이터 전송
+1. mpu6050으로 충돌/전복 데이터 실시간 측정 -> aws EC2 DB로 전송
+2. 사고 발생시 사고 데이터 전송
+3. 같은 라우터에 접속중인 다른 차량 사고 데이터 수신 -> 수신 차량 즉시 차량 정지
+4. 전방 차량과 일정 거리 이하 -> 주변 차량 데이터 전송
+5. 소켓 통신으로 구현
+
+## DB
+1. AWS EC2 인스턴스로 데이터 전송
+2. MySQL로 데이터 관리
+
+---
